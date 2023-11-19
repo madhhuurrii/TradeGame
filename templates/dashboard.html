@@ -1,0 +1,90 @@
+{% extends 'bind.html' %}
+{% block body %}
+<div class="container m-5">
+    {% for ses in sess %}
+    <div class="row">
+        
+        <div class="col-md-6 pt-5 ">
+           <img src="{{ url_for('static', filename='images/Group 6.png')}}" class="rounded mx-auto d-block pb-4" alt="">
+           
+           <div class="text-center text-bold fs-4">{{ses.name}},{{ses.age}}</div>
+           <!-- <div class="text-center txt-color fs-4">Age: {{ses.age}}</div> -->
+           <div class="text-center text-bold fs-4">{{ses.email}}</div>
+           
+        </div>
+        <div class="col-md-6">
+           <div class="row log-contain">
+            <div class="col-md-6 p-3">
+                <div class="text-center">Account Value</div>
+                <div class="text-center text-bold fs-2">
+
+                    ${{ses.coins}}
+                 </div>
+            </div>
+            <div class="col-md-6 p-3">
+                <div class="text-center">Today's Change</div>
+                <div class="text-center text-bold fs-2">
+                    0.00 %
+                 </div>
+            </div>
+           </div>
+           <div class="mt-5 text-center text-bold">Trade Holdings</div>
+           <div class="row log-contain">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Stock Name</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col">Total value</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+           </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

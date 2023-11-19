@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container p-5 m-5">
+    <div class="row">
+        <div class="col-md-6">
+           <img src="{{ url_for('static',filename='images/Logo (5).png')}}" alt="Logo" class="pb-lg-5">
+           <img src="{{ url_for('static', filename='images/image 1 (1).png') }}" class="" alt="Trading"/>
+        </div>
+        <div class="col-md-6">
+            
+             <div class="container m-2 p-5 login-contain">
+                <h2 class="title text-center txt-color text-bold">USER LOGIN</h2>
+                <form method="post">
+                    <div class="m-5">
+                        <label for="name" class="txt-color pb-2 fs-5">Full Name :</label>
+                        <br>
+                        <input type="text" name="name" id="name" size="50" class="p-2 log-contain">
+                    </div>
+                    <div class="m-5">
+                    <label for="email" class="txt-color pb-2 fs-5">Email Address :</label>
+                    <br>
+                    <input type="text" size="50" name="email" id="email" class="p-2 log-contain">
+                    </div>
+                    <div class="m-5">
+                        <label for="Password" class="txt-color pb-2 fs-5">Password :</label>
+                        <br>
+                        <input type="password" name="password" id="password" size="50" class="p-2 log-contain">
+                    </div>
+                    <div class="m-5">
+                        <label for="Age" class="txt-color pb-2 fs-5">Age :</label>
+                        <br>
+                        <input type="number" name="age" id="age" size="50" class="p-2 log-contain">
+                    </div>
+                    <div class="mx-5 my-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" class="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label txt-color fs-5" for="flexCheckDefault">
+                             I agree to terms & conditions
+                            </label>
+                          </div>
+                        <!-- <input type="checkbox" name="Remember Me" id="" class="checkbox"><span class="txt-color fs-5">  Remember Me!</span> -->
+                    </div>
+                    <div class="mt-5 mx-5">
+                        <input type="submit" value="Submit" name="submit"  class="p-2 fs-5 submit">
+                    </div>
+
+                </form>
+
+             </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

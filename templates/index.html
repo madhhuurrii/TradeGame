@@ -1,0 +1,106 @@
+{% extends 'bind.html' %}
+{% block body %}
+<div class="container">
+    <div class="text-center p-4">
+        <form method="POST" action="/">
+            <label for="company" class=" fs-3 pb-3 txt-color">Enter Company Name:</label>
+            <br>
+            <input type="text" id="companyn" name="companyn" size="50" required autocomplete="off" class=" p-2 log-contain" list="companyList">
+            <datalist id="companyList">
+                <option value="TSLA">
+                <option value="INFY">
+                <option value="IBM">
+            </datalist>
+            <br>
+            <button type="submit" class="m-3 fs-5 submit">Plot</button>
+            <div class="container text-center">
+              <!-- Button trigger modal -->
+         
+              <!-- <div class="txt-color text-bold fs-3">ibm.png</div> -->
+              <!-- <img src="/static/{{p}}" alt="Trade"> -->
+              <!-- <img src="{{ url_for('static',filename='ibm.png')}}" class="text-center" alt="Trade"> -->
+          </div>
+          </div>
+<div class="text-center p-4">
+    <button type="button" size="100" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        BUY STOCK
+      </button>
+    </div>
+</div> 
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">BUY STOCK </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form method="post" novalidate="novalidate" class="pb-5">
+                <div class="mt-5 mx-5">
+                <label  class="fs-3 pb-3 txt-color">Enter Company Name:</label>
+               <br>
+                <input type="text" size="50" name="company" id="company" class="p-2">
+            </div>
+                <div class="mt-5 mx-5">
+                    <label for="qty" class="txt-color pb-2 fs-5">Quantity of Stocks :</label>
+                    <br>
+                    <input type="number" size="50" name="qty" id="qty" class="p-2">
+                </div>
+                    <!-- <input type="checkbox" name="Remember Me" id="" class="checkbox"><span class="txt-color fs-5">  Remember Me!</span> -->
+            
+                <div class="mt-5 mx-5">
+                    <input type="submit" value="Submit" name="submit"  class="p-2 fs-5 submit">
+                </div>
+
+            </form>
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+    
+        </div>
+      </div>
+</div>
+</div>
+    <!-- {% if p %} -->
+    <div class="container text-center">
+        <!-- Button trigger modal -->
+   
+        <div class="txt-color text-bold fs-3">ibm.png</div>
+        <!-- <img src="/static/{{p}}" alt="Trade"> -->
+        <img src="{{ url_for('static',filename='ibm.png')}}" class="text-center" alt="Trade">
+    </div>
+    </div>
+    <!-- {% else %} -->
+    <div class="container"></div>
+    <!-- {% endif %} -->
+</form>
+<script>
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+    // Get the input element and the datalist
+    var input = document.getElementById("company");
+    var datalist = document.getElementById("companyList");
+
+    // Define the list of company names
+    var companies = ["TSLA", "INFY", "IBM"];
+
+    // Create options for the datalist based on the company names
+    companies.forEach(function(company) {
+        var option = document.createElement("option");
+        option.value = company;
+        datalist.appendChild(option);
+    });
+</script>
+{% endblock %}

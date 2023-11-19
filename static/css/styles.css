@@ -1,0 +1,41 @@
+.bg-color{
+    background-color: #F9DA6C;
+}
+.txt-color{
+   color: #F27120;
+}
+.login-contain{
+    border:5px;
+    border-style: solid;
+    border-color: #F27120;
+    /* border: 22px; */
+    border-radius: 15px;
+}
+.log-contain{
+    border:3px;
+    border-style: solid;
+    border-color: #F27120;
+    /* border: 22px; */
+    
+    background-color: #F9DA6C;
+    border-radius: 5px;
+}
+.submit{
+    background-color: #F27120;
+    color: #fff;
+    border-color: #F27120;
+    border-radius: 5px;
+    width: 420px;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border: 2px;
+    border-style: solid;
+    border-color: #F27120;
+    border-radius: 2px;
+    background: #F9DA6C;
+}
+.navbar{
+    background-color: #F9DA6C;
+}

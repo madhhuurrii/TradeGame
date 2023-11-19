@@ -1,0 +1,59 @@
+{% extends 'bind.html' %}
+{% block body %}
+<div>
+    <h1 class="txt-color text-bold text-center mb-4 pb-4">Market Statistics</h1>
+    <div class="row m-2">
+        
+       
+        <div class="col-md-6  log-contain">
+            <h3 class="text-center txt-color text-bold pb-2">Top 5 Gainers in BSE</h3>
+            {% for i in tg %}
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Stock Name</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> {{i['securityID']}}</td>
+                    <td>${{i['LTP']}}</td>
+                    <td>{{i['pChange']}}%</td>
+                  </tr>
+                  
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+        
+        
+        <div class="col-md-6 log-contain">
+            <h3 class="text-center txt-color text-bold pb-2">Top 5 Losers in BSE</h3>
+            {% for i in tl %}
+          <!-- {{i['securityID']}} -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Stock Name</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> {{i['securityID']}}</td>
+                <td>${{i['LTP']}}</td>
+                <td>{{i['pChange']}}%</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          {% endfor %}
+        </div>
+        
+    </div>
+    
+</div>
+{% endblock %}
